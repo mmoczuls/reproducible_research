@@ -1,0 +1,75 @@
+---
+title: "Chapter 1"
+format: html
+editor: source
+---
+
+## Introduction to R
+
+### **Math in R**
+
+* Anytime R is showing you a + and not a > that means it's waiting for you to finish a command
+
+* Math commands in R:
+
+  + Parentheses: (, )
+  + Exponents: ^ or **
+  + Multiply: *
+  + Divide: /
+  + Add: +
+  + Subtract: -
+  + 5e3 for scientific notatio
+
+### **Variables and Assignments**
+
+* If you do x <- 1/40 that will mean x = 0.025
+
+* Now you can do equations with x
+  + Like log(x)
+
+* Variable names can contain letters, numbers, underscores and periods but no spaces
+
+ * Make sure to be consistent if you are using
+ 
+  + periods.between.words
+  + underscores_between_words
+  + camelCaseToSeparateWords
+  
+### **Mangaing your environment**
+
+* ls() will list all of the variables and functions stored in the global environment
+  + To list all variables, you can write ls(all.names=TRUE)
+
+* You can use rm() to get rid of objects you no longer need
+
+### **Installing Packages**
+
+* See what packages you have installed: installed.packages()
+
+* You can install packages by typing install.packages("packagename")
+
+* You can update installed packages by typing update.packages()
+
+* You can remove a package with remove.packages("packagename")
+
+* You can make a package available for use with library(packagename)
+
+* You can also do this all in packages tab
+
+  
+
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).

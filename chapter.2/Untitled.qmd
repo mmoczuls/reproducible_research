@@ -1,0 +1,63 @@
+---
+title: "Chapter 2"
+format: html
+editor: source
+---
+
+## Project Management in R Studio
+
+### **Intro to Project Management**
+
+* Why project management and organization is important:
+  + It will help ensure the integrity of your data
+  + It makes it simpler to share your code with someone else (a lab-mate, collaborator, or supervisor)
+  + It allows you to easily upload your code with your manuscript submission
+  + It makes it easier to pick the project back up after a break
+  
+### **Organizing Data**
+
+* Creating a project:
+  + Click the “File” menu button, then “New Project”
+  + Click “New Directory”
+  + Click “New Project”
+  + Type in the name of the directory to store your project, e.g. “my_project”
+  + If available, select the checkbox for “Create a git repository.”
+  + Click the “Create Project” button
+  
+#### Best Practicies for Organizing Data
+
+1. Treat Data as read only: make it easy to read with hashtags explaining what each code is doing and also making it nicely formatted
+
+2. Data cleaning: storing scripts in a seperate folder and creating a read-only folder with the cleaned datasets
+
+3. Generating output as disposable: have an output folder with subcategories for each seperate analysis
+
+4. Put each project in its own directory, which is named after the project
+
+5. Put text documents associated with the project in the doc directory
+
+6. Put raw data and metadata in the data directory, and files generated during cleanup and analysis in a results directory
+
+7. Put source for the project’s scripts and programs in the src directory, and programs brought in from elsewhere or compiled locally in the bin directory.
+
+8. Name all files to reflect their content or function
+
+### **Saving Data in Data Directory**
+
+* 
+
+### 
+
+
+```{r}
+head(gapminder_data)
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).

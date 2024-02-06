@@ -1,0 +1,63 @@
+---
+title: "Chapter 3"
+format: html
+editor: source
+---
+
+## Seeking help
+
+### **Reading Help Files** 
+
+* General way to find help on R: 
+  - ?function_name
+  - help(function_name)
+  
+* Each help page is broken into a subscription
+  - Description: An extended description of what the function does
+  - Usage: The arguments of the function and their default values (which can be changed)
+  - Arguments: An explanation of the data each argument is expecting
+  - Details: Any important details to be aware of
+  - Value: The data the function returns
+  - See Also: Any related functions you might find useful
+  - Examples: Some examples for how to use the function
+
+### **Special Operators**
+
+* To seek help from specific operators, use quotes or backticks:
+  - ?"<-"
+  - ?`<-`
+  
+### **Getting Help with Packages**
+
+* Many packages come with “vignettes”: tutorials 
+* Vignettes: long-form guide to a package
+* vignette(package="package-name") will list all available vignettes for package-name, and vignette("vignette-name") will open the specified vignette.
+* If a package doesn’t have any vignettes, you can usually find help by typing help("package-name")
+* RStudio also has cheatsheets: https://posit.co/resources/cheatsheets/
+
+### **When You Remember Part of the Function Name**
+
+* When you don't know what package a function is in, you can write:
+  - ??function_name
+* It will tell you it back. like you know "set" is in it:
+  - ??set
+  
+
+
+
+
+  
+
+
+```{r}
+?(write.table)
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).

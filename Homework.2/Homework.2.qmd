@@ -1,0 +1,189 @@
+---
+title: "Homework 2"
+format: html
+editor: source
+---
+
+# Vectors and data types
+
+Vector
+: A series of values, which can be either numbers or characters. Can assign values to a vector using the c() function
+
+
+#### Creating Vectors
+
+```{r}
+weight_g <- c(50, 60, 65, 82)
+weight_g
+
+animals <- c("mouse", "rat", "dog")
+animals
+
+```
+
+#### Length Function
+
+Length ()
+: Tells you how many elements are in a particular vector
+
+```{r}
+length(weight_g)
+length(animals)
+```
+
+Class ()
+: Tells what kind of object you are working with
+
+```{r}
+class(weight_g)
+class(animals)
+```
+
+Str ()
+: Provides an overview of the structure of an object and its elements
+
+```{r}
+str(weight_g)
+str(animals)
+```
+
+#### Using c() to add stuff to your dataset
+
+```{r}
+c(weight_g, 90)
+c(animals, "dolphin")
+```
+
+#### Atomic Vectors
+
+Atomic Vectors
+: Simplest R data type and is a linear vector of a single type. 
+
+##### Four Types of Atomic Vectors:
+1. "logical" for TRUE and FALSE (the boolean data type)
+2. "integer" for integer numbers (e.g., 2L, the L indicates to R that it’s an integer)
+3. "complex" to represent complex numbers with real and imaginary parts (e.g., 1 + 4i) and that’s all we’re going to say about them
+4. "raw" for bitstreams that we won’t discuss further
+
+#### You can check the type of vector using typeof() 
+
+````{r}
+typeof(weight_g)
+````
+
+## Subsetting Vectors
+
+#### Examples of Subsetting Vectors
+
+* Here I show how to subset a specific data point from the vector.
+* Then I am showing how I can make duplicates of data points in the vector
+
+````{r}
+
+animals <- c("mouse", "rat", "dog", "cat") 
+animals[2]
+
+animals[c(3, 2)]
+
+more_animals <- animals[c(1, 2, 3, 2, 1, 4)]
+more_animals
+
+````
+
+#### Conditional Subsetting
+
+* Another way to subset a vector is through logical vector (TRUE or FALSE)
+
+* TRUE selects the element with the same index, and FALSE will not
+
+````{r}
+
+weight_g <- c(21, 34, 39, 54, 55)
+weight_g[c(TRUE, FALSE, FALSE, TRUE, TRUE)]
+weight_g
+
+````
+
+* These vectors aren't usually typed by hand but are the output of tests such as...
+
+````{r}
+
+weight_g <30
+
+weight_g[weight_g < 30]
+
+weight_g[weight_g > 30 & weight_g < 50]
+
+weight_g[weight_g <= 30 | weight_g == 55]
+
+weight_g[weight_g >= 30 & weight_g == 21]
+
+````
+* The double equal sign means  numerical equality between the left and right hand sides, and should not be confused with the single = sign, which performs variable assignment (similar to <-).
+
+````{r}
+
+animals <- c("mouse", "rat", "dog", "cat", "cat")
+
+animals[animals == "cat" | animals == "rat"]
+
+````
+
+## Missing Data
+
+* Missing data are represented as NA
+
+* You can add the argument na.rm = TRUE to calculate the result as if the missing values were removed (rm stands for ReMoved) first
+
+````{r}
+
+heights <- c(2, 4, 4, NA, 6)
+mean(heights)
+max(heights)
+mean(heights, na.rm = TRUE)
+max(heights, na.rm = TRUE)
+
+````
+
+* The functions is.na(), na.omit(), and complete.cases() are good to use if you have missing data
+
+
+
+# Installing Packages
+
+* An R package is an extension of R
+
+* R Packages can be installed from sites like:
+  + CRAN
+  + Bioconductor
+  + Github
+
+#### Installing a package from CRAN
+
+#### Installing a package from Github
+
+* To install a package from GitHub, the R package devtools should be used
+
+
+````{r}
+
+installed.packages()
+
+````
+
+#### Load and use packages
+
+* To use a function in an R package, you have to load the R package using the function library().
+
+````{r}
+
+# Import my data
+library("readr")
+my_data <- read_tsv("http://www.sthda.com/upload/decathlon.txt")
+# View the first 6 rows and tge first 6 columns
+# syntax: my_data[row, column]
+my_data[1:6, 1:6]
+
+````
+
+
